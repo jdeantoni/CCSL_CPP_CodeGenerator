@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="src"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="src">
+				<Option output="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/src" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib64/gcc/x86_64-suse-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib64/gcc/x86_64-suse-linux/8/include-fixed"/>
+					<Add directory="/usr/lib64/gcc/x86_64-suse-linux/8/../../../../x86_64-suse-linux/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/c++/8/x86_64-suse-linux"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 src"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="src/fast">
+				<Option output="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/src" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib64/gcc/x86_64-suse-linux/8/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib64/gcc/x86_64-suse-linux/8/include-fixed"/>
+					<Add directory="/usr/lib64/gcc/x86_64-suse-linux/8/../../../../x86_64-suse-linux/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/8"/>
+					<Add directory="/usr/include/c++/8/x86_64-suse-linux"/>
+					<Add directory="/usr/include/c++/8/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 src/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Clock.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Clock.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Constraint.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Constraint.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Concatenation.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Concatenation.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Defer.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Defer.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Intersection.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Intersection.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/SampledOn.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/SampledOn.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Union.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Union.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Wait.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Expressions/Wait.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/Causes.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/Causes.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/Exclusion.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/Exclusion.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/Precedes.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/Precedes.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/SubClock.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Constraints/Relations/SubClock.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/NamedElement.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/NamedElement.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Utils/QuantumBoolean.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Utils/Sequence.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Utils/Sequence.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Utils/TruthTable.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/Utils/TruthTable.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/main.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="/home/jdeanton/boulot/recherche/Marte/CodeGenerator/testVFrederic/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
