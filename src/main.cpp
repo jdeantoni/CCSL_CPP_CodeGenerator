@@ -22,7 +22,9 @@
 #include "Constraints/Relations/Causes.h"
 #include "Constraints/Expressions/Intersection.h"
 #include "Constraints/Expressions/SampledOn.h"
-
+#include "Constraints/Expressions/UpTo.h"
+#include "Constraints/Expressions/Inf.h"
+#include "Constraints/Expressions/Sup.h"
 
 //remove comment to disable assert
 //#define NDEBUG
@@ -138,8 +140,18 @@ int main() {
 
     Intersection c4InterC5(c4,c5,"c4InterC5");
 
-    vector<Constraint*> allConstraints = {&w1, &conc, &def,&c2Subc1, &c1andc3, &c1Excludesc3, &c4CausesC5, &c4InterC5, &c4ampledOnC5};
-    vector<Clock*> allClocks = {&c1, &c2, &c3, &w1, &conc, &def,&c1andc3, &c4,&c5, &c4InterC5, &c4ampledOnC5};
+
+    Clock c6("c6");
+    Clock c7("c7");
+    UpTo c6upToC7(c6,c7,"c6upToC7");
+
+    Clock c8("c8");
+    Clock c9("c9");
+    Inf infC8C9(c8,c9,"infC8C9");
+    Sup supC8C9(c8,c9,"supC8C9");
+
+    vector<Constraint*> allConstraints = {&w1, &conc, &def,&c2Subc1, &c1andc3, &c1Excludesc3, &c4CausesC5, &c4InterC5, &c4ampledOnC5, &c6upToC7, &infC8C9, &supC8C9};
+    vector<Clock*> allClocks = {&c1, &c2, &c3, &w1, &conc, &def,&c1andc3, &c4,&c5, &c4InterC5, &c4ampledOnC5,&c6,&c7,&c6upToC7, &c8, &c9, &infC8C9, &supC8C9};
 
 	for (unsigned int currentStep= 0; currentStep < nbSteps; currentStep++) {
         cout << "-------------step " << currentStep << endl;

@@ -31,12 +31,12 @@ bool SampledOn::evaluate() {
 void SampledOn::rewrite() {
     if(status == TRUE){
         sampledSeen = false;
-        cout << "sampledSeen set to false" <<endl;
+//        cout << "sampledSeen set to false" <<endl;
     }
 
     if (sampledClock.status == TRUE){
         sampledSeen = true;
-        cout << "sampledSeen set to true" <<endl;
+//        cout << "sampledSeen set to true" <<endl;
     }
 
     return;
