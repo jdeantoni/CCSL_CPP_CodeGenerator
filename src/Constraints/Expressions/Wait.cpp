@@ -55,7 +55,7 @@ void Wait::rewrite() {
  */
 bool Wait::propagate() {
     if (((N == 1)||(N == 0))) {
-        if (this->status == POSSIBLY && c1.status != POSSIBLY) {
+        if (this->status != c1.status) {
             this->status = c1.status;
 //            cout << this->name << "set to " << c1.status << endl;
             return false;
@@ -65,7 +65,7 @@ bool Wait::propagate() {
             return false;
         }
 
-//        cout << "problem: "<< this->name << " is " << this->status << " && c1 is " << c1.status << endl;
     }
+//    cout << "problem: "<< this->name << " is " << this->status << " && c1 is " << c1.status << endl;
    return true;
 }

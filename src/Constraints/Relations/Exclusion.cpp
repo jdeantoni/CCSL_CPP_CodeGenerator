@@ -3,7 +3,11 @@
 //
 
 #include "Exclusion.h"
+#include <iostream>
+#include <assert.h>
 
+using std::cout;
+using std::endl;
 
 Exclusion::Exclusion(Clock& l, Clock& r): c1(l), c2(r) {
 }
@@ -23,11 +27,30 @@ void Exclusion::rewrite() {
  * @return true is stability is reached, false otherwise
  */
 bool Exclusion::propagate() {
+//    cout << "Exclusion::propagate " << " c1 = "<< c1.status << " c2 = " << c2.status << endl;
+
+    if(  (c1.status == TRUE && c2.status == FALSE)
+       ||(c1.status == FALSE && c2.status == TRUE)
+       ||(c1.status == POSSIBLY && c2.status == POSSIBLY)
+       ||(c1.status == POSSIBLY && c2.status == FALSE)
+       ||(c1.status == FALSE && c2.status == POSSIBLY)
+       ||(c1.status == FALSE && c2.status == FALSE)
+    ){
+        return true;
+    }
+
     if (c1.status == TRUE){
+//        cout << c2 << endl;
+//        assert(c2.status != TRUE);
         c2.status = FALSE;
+        return false;
     }
     if (c2.status == TRUE){
+//        assert(c1.status != TRUE);
         c1.status = FALSE;
+        return false;
     }
-    return true; //never propagates anything...
+
+    cout << "ERROR: in Exclusion, a case is missing: c1 = "<< c1.status << " c2 = " << c2.status << endl;
+    exit(-1);
 }

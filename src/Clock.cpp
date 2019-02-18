@@ -23,7 +23,7 @@ void Clock::ticks(){
 }
 
 std::ostream& operator<<(std::ostream& os, const Clock& c){
-	os << "Clock " << c.name << ": " << c.nbTick;
+	os << "Clock " << c.name << ": " << c.nbTick << ", " << c.status;
     if(c.isDead){
         os << " (is dead)";
     }

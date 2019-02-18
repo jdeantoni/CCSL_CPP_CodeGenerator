@@ -26,6 +26,8 @@ void Intersection::rewrite() {
  * @return true is stability is reached, false otherwise
  */
 bool Intersection::propagate() {
+//    cout << "Intersection::propagate " << " c1 = "<< c1.status << " c2 = " << c2.status << " def = " << status << endl;
+
     if (status == TRUE && (c1.status == TRUE && c2.status == TRUE)) {
         return true;
     }
@@ -56,10 +58,8 @@ bool Intersection::propagate() {
     }
     if (status == FALSE && (c1.status == POSSIBLY && c2.status == POSSIBLY)) {
         if ((rand() % 2) == 1) {
-            c1.status = TRUE;
             c2.status = FALSE;
         } else {
-            c2.status = TRUE;
             c1.status = FALSE;
         }
         return false;

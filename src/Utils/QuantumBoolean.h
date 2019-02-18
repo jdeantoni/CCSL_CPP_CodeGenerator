@@ -16,13 +16,6 @@ enum QuantumBoolean{
 		FALSE
 };
 
-inline std::ostream& operator<<(std::ostream& os, QuantumBoolean& v){
-	switch (v){
-		case TRUE: os << "TRUE"; return os;
-		case POSSIBLY: os << "POSSIBLY"; return os;
-		case FALSE: os << "FALSE"; return os;
-	}
-	return os;
-}
+std::ostream& operator<<(std::ostream& os, const QuantumBoolean& v);
 
 #endif

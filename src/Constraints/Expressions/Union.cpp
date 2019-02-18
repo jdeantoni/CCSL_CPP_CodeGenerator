@@ -29,19 +29,21 @@ void Union::rewrite() {
  * @return true is stability is reached, false otherwise
  */
 bool Union::propagate() {
+
+//    cout << "Union::propagate " << " c1 = "<< c1.status << " c2 = " << c2.status << " def = " << status << endl;
+
     if (status == TRUE && (c1.status == TRUE || c2.status == TRUE)) {
         return true;
     }
-    if (status == FALSE && (c1.status == FALSE && c2.status == FALSE)) {
+    if ((status == FALSE) && (c1.status == FALSE) && (c2.status == FALSE)) {
         return true;
     }
-    if (status == POSSIBLY
+    if ((status == POSSIBLY)
         && ((c1.status == FALSE  && c2.status == POSSIBLY)
-            || (c2.status == FALSE && c1.status == POSSIBLY))
-            || (c2.status == POSSIBLY && c1.status == POSSIBLY)) {
+            || (c2.status == FALSE && c1.status == POSSIBLY)
+            || (c2.status == POSSIBLY && c1.status == POSSIBLY))) {
         return true;
     }
-
     //if here, something must be done
 
     if (c1.status == TRUE || c2.status == TRUE){
@@ -58,9 +60,11 @@ bool Union::propagate() {
         return false;
     }
     if (status == TRUE && (c1.status == POSSIBLY && c2.status == POSSIBLY)) {
+//        cout << "propagate union true " ;
         if ((rand() % 2) == 1) {
             c1.status = TRUE;
         } else {
+//            cout << " --- c2 becomes true" << endl;
             c2.status = TRUE;
         }
         return false;
