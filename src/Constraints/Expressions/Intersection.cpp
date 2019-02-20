@@ -39,6 +39,10 @@ bool Intersection::propagate() {
         return true;
     }
 
+    if (status == FALSE && (c1.status == POSSIBLY && c2.status == POSSIBLY)) {
+        return true;
+    }
+
     //if here, something must be done
 
     if (c1.status == TRUE  && c2.status == TRUE){
@@ -54,14 +58,6 @@ bool Intersection::propagate() {
         c1.status = TRUE;
         assert(c2.status != FALSE);
         c2.status = TRUE;
-        return false;
-    }
-    if (status == FALSE && (c1.status == POSSIBLY && c2.status == POSSIBLY)) {
-        if ((rand() % 2) == 1) {
-            c2.status = FALSE;
-        } else {
-            c1.status = FALSE;
-        }
         return false;
     }
 

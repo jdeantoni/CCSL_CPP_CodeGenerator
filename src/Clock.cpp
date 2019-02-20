@@ -11,7 +11,7 @@
 using std::cout;
 using std::endl;
 
-Clock::Clock(std::string name): NamedElement(name),status(POSSIBLY) {
+Clock::Clock(std::string name): NamedElement(name), status(POSSIBLY) {
 	srand(this->randomSeed);
 }
 

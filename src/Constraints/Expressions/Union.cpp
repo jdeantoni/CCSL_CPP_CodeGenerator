@@ -44,6 +44,9 @@ bool Union::propagate() {
             || (c2.status == POSSIBLY && c1.status == POSSIBLY))) {
         return true;
     }
+    if (status == TRUE && (c1.status == POSSIBLY && c2.status == POSSIBLY)) {
+        return true;
+    }
     //if here, something must be done
 
     if (c1.status == TRUE || c2.status == TRUE){
@@ -59,16 +62,7 @@ bool Union::propagate() {
         c2.status = FALSE;
         return false;
     }
-    if (status == TRUE && (c1.status == POSSIBLY && c2.status == POSSIBLY)) {
-//        cout << "propagate union true " ;
-        if ((rand() % 2) == 1) {
-            c1.status = TRUE;
-        } else {
-//            cout << " --- c2 becomes true" << endl;
-            c2.status = TRUE;
-        }
-        return false;
-    }
+
     if (status == TRUE && (c1.status == FALSE)) {
         c2.status = TRUE;
         return false;
