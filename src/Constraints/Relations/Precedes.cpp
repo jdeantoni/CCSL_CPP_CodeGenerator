@@ -33,9 +33,20 @@ void Precedes::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Precedes::propagate() {
+bool Precedes::propagatesChoice() {
     evaluate();
     return true; //never propagates anything...
 }
 
 
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Precedes::propagatesDeath(){
+    if (left.isDead && !right.isDead && delta == 0){
+        right.isDead = true;
+        return false;
+    }
+    return true;
+}

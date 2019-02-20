@@ -53,7 +53,7 @@ void Wait::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Wait::propagate() {
+bool Wait::propagatesChoice() {
     if (((N == 1)||(N == 0))) {
         if (this->status != c1.status) {
             this->status = c1.status;
@@ -68,4 +68,17 @@ bool Wait::propagate() {
     }
 //    cout << "problem: "<< this->name << " is " << this->status << " && c1 is " << c1.status << endl;
    return true;
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Wait::propagatesDeath(){
+    if (c1.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
+
+    return true;
 }

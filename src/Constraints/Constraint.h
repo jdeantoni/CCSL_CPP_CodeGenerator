@@ -10,8 +10,9 @@ class Constraint {
 public:
     virtual void reset();
     virtual  bool evaluate()=0;
-    virtual  bool propagate()=0;
+    virtual  bool propagatesChoice()=0;
     virtual  void rewrite()=0;
+    virtual  bool propagatesDeath()=0;
 };
 
 

@@ -57,7 +57,7 @@ void Concatenation::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Concatenation::propagate() {
+bool Concatenation::propagatesChoice() {
     if(followLeft){ //follow left
         if (leftClock.status != POSSIBLY && this->status == POSSIBLY){
             this->status = leftClock.status;
@@ -85,4 +85,16 @@ void Concatenation::reset(){
     Constraint::reset();
     Clock::reset();
     followLeft = true;
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Concatenation::propagatesDeath(){
+    if (!followLeft && rightClock.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
+    return true;
 }

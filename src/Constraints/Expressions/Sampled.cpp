@@ -53,8 +53,8 @@ void Sampled::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Sampled::propagate() {
-//    cout << "Sampled::propagate " << " sampled = "<< sampledClock.status << " sampling = " << samplingClock.status << " def = " << status << " sampledSeen " << sampledSeen <<endl;
+bool Sampled::propagatesChoice() {
+//    cout << "Sampled::propagatesChoice " << " sampled = "<< sampledClock.status << " sampling = " << samplingClock.status << " def = " << status << " sampledSeen " << sampledSeen <<endl;
 
     if( status == TRUE && sampledSeen && samplingClock.status == TRUE){
         return true;
@@ -141,4 +141,21 @@ bool Sampled::propagate() {
 
     cout << "ERROR: in Sampled Expression " << name << " a case is missing: sampled = "<< sampledClock.status << " sampler = " << samplingClock.status << " def = " << status << endl;
     exit(-1);
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Sampled::propagatesDeath(){
+       if (!sampledSeen && sampledClock.isDead && !isDead){
+           isDead = true;
+           return false;
+       }
+       if (sampledSeen && samplingClock.isDead && !isDead){
+           isDead = true;
+           return false;
+       }
+
+    return true;
 }

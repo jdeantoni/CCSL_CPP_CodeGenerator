@@ -25,7 +25,7 @@ void Causes::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Causes::propagate() {
+bool Causes::propagatesChoice() {
     if (delta == 0){
         if (left.status == FALSE && right.status == POSSIBLY){
             right.status = FALSE;
@@ -37,4 +37,16 @@ bool Causes::propagate() {
         };
     }
     return true; //never propagates anything...
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Causes::propagatesDeath(){
+    if (left.isDead && !right.isDead && delta == 0){
+        right.isDead = true;
+        return false;
+    }
+    return true;
 }

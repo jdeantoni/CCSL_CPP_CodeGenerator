@@ -19,17 +19,19 @@ public:
 	Clock& c1;
 	Clock& c2;
 
+	Union( Clock&c11, Clock& c22, string name);
+
 	/**
      * set "False" clock values
      * @return true if something changed, false otherwise
      **/
 	virtual  bool evaluate() override;
-	virtual  bool propagate() override;
+	virtual  bool propagatesChoice() override;
 	virtual  void rewrite() override;
 	virtual  void reset() override;
+	virtual  bool propagatesDeath() override;
 
 
-	Union( Clock&c11, Clock& c22, string name);
 	virtual ~Union();
 };
 

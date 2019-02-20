@@ -277,58 +277,86 @@ void test4(const unsigned int nbSteps) {
          << endl;
 }
 
+void testDeathPropagation(const unsigned int nbSteps) {
+    Clock c5("c5");
+    Clock c4("c4");
+    Precedes c4precC5(c4,c5);
+    UpTo c4UpToC5(c4,c5,"c4UpToC5");
+
+    Clock willDieWhenSizeOfc4UpToC5("willDieWhenSizeOfc4UpToC5");
+    Precedes deathPropagator(c4UpToC5,willDieWhenSizeOfc4UpToC5);
+
+    vector<Constraint*> allExclusions = {};
+    vector<Constraint*> allConstraintsButExclusions = {&c4precC5,&c4UpToC5, &deathPropagator};
+    vector<Clock*> allClocks = {&c4, &c5, &c4UpToC5, &willDieWhenSizeOfc4UpToC5};
+
+
+    Solver solver(allClocks, allConstraintsButExclusions, allExclusions);
+    solver.simulate(nbSteps);
+
+    cout << endl
+         << "/***********************************\n"
+         << "*   test death propagation 1 ends  *\n"
+         << "************************************/"
+         << endl;
+
+}
 
 int main() {
     const unsigned int nbSteps = 50;
 
+//    /**
+//    * TEST1
+//    */
+//    test1(nbSteps);
+//
+//
+//    /**
+//    * TEST2
+//    */
+//
+//    test2(nbSteps);
+//
+//
+//    /**
+//    * TEST3
+//    */
+//
+//    test3(nbSteps);
+//
+//    /**
+//    * TEST DEADLOCK 1
+//    */
+//
+//    testDeadlock1(nbSteps);
+//
+//    /**
+//    * TEST DEADLOCK 1
+//    */
+//
+//    testDeadlock2(nbSteps);
+//
+//    /**
+//    * TEST 4
+//    */
+//
+//    test4(nbSteps);
+//
+//    /**
+//     * TEST sampled
+//     */
+//
+//    testSample(nbSteps);
+//
+//    /**
+//   * TEST sampled
+//   */
+//    testStrictSample(nbSteps);
+
     /**
-    * TEST1
-    */
-    test1(nbSteps);
-
-
-    /**
-    * TEST2
-    */
-
-    test2(nbSteps);
-
-
-    /**
-    * TEST3
-    */
-
-    test3(nbSteps);
-
-    /**
-    * TEST DEADLOCK 1
-    */
-
-    testDeadlock1(nbSteps);
-
-    /**
-    * TEST DEADLOCK 1
-    */
-
-    testDeadlock2(nbSteps);
-
-    /**
-    * TEST 4
-    */
-
-    test4(nbSteps);
-
-    /**
-     * TEST sampled
+     * test death propagation 1
      */
-
-    testSample(nbSteps);
-
-    /**
-   * TEST sampled
-   */
-    testStrictSample(nbSteps);
-
+    testDeathPropagation(nbSteps);
     return 0;
 }
 

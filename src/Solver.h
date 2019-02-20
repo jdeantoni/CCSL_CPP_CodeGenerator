@@ -27,6 +27,7 @@ public:
     virtual void solve();
     virtual void simulate(const unsigned int nbSteps);
     virtual void propagatesChoice();
+    virtual void propagatesDeath();
 
     virtual ~Solver() = default;
 };

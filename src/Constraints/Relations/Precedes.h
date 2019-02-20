@@ -19,20 +19,18 @@ public:
 	int delta = 0;
     Clock& left;
     Clock& right;
-//    TruthTable truthTable =
-//			{//delta == 0 ;          a     ;     b
-//				{ TRUE, 	   POSSIBLY,   FALSE  },
-//				{ FALSE, 	   POSSIBLY,   POSSIBLY}
-//			};
 
+
+	Precedes(Clock& l, Clock& r);
     /**
      * set "False" clock values
      * @return true if something changed, false otherwise
      **/
     virtual  bool evaluate() override;
-    virtual  bool propagate() override;
+    virtual  bool propagatesChoice() override;
     virtual  void rewrite() override;
-	Precedes(Clock& l, Clock& r);
+	virtual  bool propagatesDeath() override;
+
 	virtual ~Precedes();
 };
 

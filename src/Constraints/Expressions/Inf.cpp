@@ -39,7 +39,7 @@ void Inf::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Inf::propagate() {
+bool Inf::propagatesChoice() {
     if(isDead){
         return true;
     }
@@ -116,4 +116,27 @@ bool Inf::propagate() {
 
     cout << "ERROR: in Inf Expression " << name << " a case is missing: left clock = "<< leftClock.status << " right clock= " << rightClock.status << " def = " << status << endl;
     exit(-1);
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Inf::propagatesDeath(){
+    if( delta > 0 && rightClock.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
+
+    if( delta < 0 && leftClock.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
+
+    if( delta == 0 && leftClock.isDead && rightClock.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
+
+    return true;
 }

@@ -24,6 +24,8 @@ void Solver::solve() {
         }
     }
 
+    propagatesDeath();
+
     for(Clock* pt_c : clocks){
         if(pt_c->status == TRUE){
             pt_c->ticks();
@@ -59,7 +61,18 @@ void Solver::propagatesChoice() {
     do{
         fixPointReached = true;
         for(Constraint* pt_c : exclusions + constraintsButExclusions){
-            bool isStable = pt_c->propagate();
+            bool isStable = pt_c->propagatesChoice();
+            fixPointReached = fixPointReached && isStable;
+        }
+    }while (! fixPointReached);
+}
+
+void Solver::propagatesDeath() {
+    bool fixPointReached = true;
+    do{
+        fixPointReached = true;
+        for(Constraint* pt_c : exclusions + constraintsButExclusions){
+            bool isStable = pt_c->propagatesDeath();
             fixPointReached = fixPointReached && isStable;
         }
     }while (! fixPointReached);

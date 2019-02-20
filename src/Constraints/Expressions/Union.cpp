@@ -28,9 +28,9 @@ void Union::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Union::propagate() {
+bool Union::propagatesChoice() {
 
-//    cout << "Union::propagate " << " c1 = "<< c1.status << " c2 = " << c2.status << " def = " << status << endl;
+//    cout << "Union::propagatesChoice " << " c1 = "<< c1.status << " c2 = " << c2.status << " def = " << status << endl;
 
     if (status == TRUE && (c1.status == TRUE || c2.status == TRUE)) {
         return true;
@@ -79,4 +79,16 @@ bool Union::propagate() {
 void Union::reset(){
     Constraint::reset();
     Clock::reset();
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Union::propagatesDeath(){
+    if (c1.isDead && c2.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
+    return true;
 }

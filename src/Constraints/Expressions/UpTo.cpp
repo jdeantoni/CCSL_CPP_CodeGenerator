@@ -35,7 +35,7 @@ void UpTo::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool UpTo::propagate() {
+bool UpTo::propagatesChoice() {
     if(isDead){
         return true;
     }
@@ -64,4 +64,18 @@ bool UpTo::propagate() {
 
     cout << "ERROR: in UpTo Expression " << name << " a case is missing: clock to follow = "<< clockToFollow.status << " killer = " << killer.status << " def = " << status << endl;
     exit(-1);
+}
+
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool UpTo::propagatesDeath(){
+    if (clockToFollow.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
+
+    return true;
 }

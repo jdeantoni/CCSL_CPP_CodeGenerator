@@ -25,8 +25,8 @@ void Intersection::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Intersection::propagate() {
-//    cout << "Intersection::propagate " << " c1 = "<< c1.status << " c2 = " << c2.status << " def = " << status << endl;
+bool Intersection::propagatesChoice() {
+//    cout << "Intersection::propagatesChoice " << " c1 = "<< c1.status << " c2 = " << c2.status << " def = " << status << endl;
 
     if (status == TRUE && (c1.status == TRUE && c2.status == TRUE)) {
         return true;
@@ -78,4 +78,16 @@ bool Intersection::propagate() {
 void Intersection::reset(){
     Constraint::reset();
     Clock::reset();
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Intersection::propagatesDeath(){
+    if ((c1.isDead || c2.isDead) && !isDead){
+        isDead = true;
+        return false;
+    }
+    return true;
 }

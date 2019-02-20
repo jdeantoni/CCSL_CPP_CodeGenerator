@@ -71,8 +71,7 @@ void Defer::rewrite() {
         nextDelay();
     }
 
-    if ( (ds.empty() && sigma.empty())
-         || delayClock.isDead) {
+    if ( (ds.empty() && sigma.empty())) {
         isDead = true;
         return;
     }
@@ -126,7 +125,7 @@ void Defer::nextDelay() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Defer::propagate() {
+bool Defer::propagatesChoice() {
     bool beta = getBeta();
     if (beta) {
 //        cout << "beta is true" << endl;
@@ -146,6 +145,20 @@ Defer::Defer(Clock& bc, Clock& dc, Sequence seq, string name)
 :baseClock(bc),delayClock(dc),sigma(seq),Clock(name)
 {}
 
-Defer::~Defer(){
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Defer::propagatesDeath(){
+    if (delayClock.isDead && !isDead){
+        isDead = true;
+        return false;
+    }
 
+    if (baseClock.isDead && ds.empty()){
+        isDead = true;
+        return false;
+    }
+
+    return true;
 }

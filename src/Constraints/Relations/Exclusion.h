@@ -13,14 +13,16 @@ class Exclusion: public Constraint{
         Clock& c1;
         Clock& c2;
 
+        Exclusion(Clock& l, Clock& r);
         /**
          * set "False" clock values
          * @return true if something changed, false otherwise
          **/
         virtual  bool evaluate() override;
-        virtual  bool propagate() override;
+        virtual  bool propagatesChoice() override;
         virtual  void rewrite() override;
-        Exclusion(Clock& l, Clock& r);
+        virtual  bool propagatesDeath() override;
+
         virtual ~Exclusion();
 };
 

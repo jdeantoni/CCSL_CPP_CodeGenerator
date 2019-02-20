@@ -26,8 +26,8 @@ void Exclusion::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool Exclusion::propagate() {
-//    cout << "Exclusion::propagate " << " c1 = "<< c1.status << " c2 = " << c2.status << endl;
+bool Exclusion::propagatesChoice() {
+//    cout << "Exclusion::propagatesChoice " << " c1 = "<< c1.status << " c2 = " << c2.status << endl;
 
     if(  (c1.status == TRUE && c2.status == FALSE)
        ||(c1.status == FALSE && c2.status == TRUE)
@@ -53,4 +53,11 @@ bool Exclusion::propagate() {
 
     cout << "ERROR: in Exclusion, a case is missing: c1 = "<< c1.status << " c2 = " << c2.status << endl;
     exit(-1);
+}
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool Exclusion::propagatesDeath(){
+    return true;
 }

@@ -22,7 +22,7 @@ void SubClock::rewrite() {
  *
  * @return true is stability is reached, false otherwise
  */
-bool SubClock::propagate() {
+bool SubClock::propagatesChoice() {
     if (right.status == FALSE){
         if (left.status != FALSE){
             left.status = FALSE;
@@ -37,4 +37,16 @@ bool SubClock::propagate() {
         }
     }
     return true; //never propagates anything...
+}
+
+/**
+ *
+ * @return true is stability is reached, false otherwise
+ */
+bool SubClock::propagatesDeath(){
+    if (right.isDead && !left.isDead){
+        left.isDead = true;
+        return false;
+    }
+    return true;
 }
